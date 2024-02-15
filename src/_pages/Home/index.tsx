@@ -11,7 +11,7 @@ export const Home = ()=>{
                     <Form.Label for="email" text="Email"/>
                     <Input.Root>
                         <Input.Field>
-                            <Input.Icon icon={EmailIcon} size={20}/>
+                            <Input.Icon icon={EmailIcon} />
                             <Input.Input id="email" placeholder="Email"/>
                         </Input.Field>
                     </Input.Root>
