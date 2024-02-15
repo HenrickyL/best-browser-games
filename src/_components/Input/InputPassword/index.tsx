@@ -15,7 +15,7 @@ interface InputPasswordProps extends React.InputHTMLAttributes<HTMLInputElement>
 
 export const InputPassword = ({iconSize,...rest}:InputPasswordProps)=>{
     const [isPassword, setIsPassword] = useState<boolean>(true)
-    const iconThemeSize = ThemeController.getTheme().iconSize
+    const iconThemeSize = ThemeController.getTheme().settings.iconSize
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>)=>{
         event.preventDefault();

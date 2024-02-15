@@ -8,7 +8,7 @@ interface InputIconProps{
 
 export const InputIcon = ({icon: Icon = Question, size }: InputIconProps)=>{
     const IconComponent: IconType = Icon || Question;
-    const IconThemeSize = ThemeController.getTheme().iconSize
+    const IconThemeSize = ThemeController.getTheme().settings.iconSize
     return (
         <IconComponent size={size || IconThemeSize}/>
     )

@@ -26,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: inherit;
     border: none;
     outline: none;
+    background-color: transparent;
   }
 
   /* Redefinindo estilos específicos para botões */
@@ -36,6 +37,7 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
     cursor: pointer;
     background-color: transparent;
+    color: ${prop=>prop.theme.text};
   }
 `;
 

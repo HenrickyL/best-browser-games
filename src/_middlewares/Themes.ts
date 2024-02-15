@@ -1,12 +1,22 @@
+interface ThemeSettings{
+  fastTransition?: number,
+  normalTransition: number,
+  slowTransition?: number,
+  iconSize: number,
+
+}
+
+interface ThemeInputsSettings{
+  background: string
+}
+
 export interface Theme {
   text: string,
   contrast: string,
   contrastLight?: string,
-  iconSize: number,
 
-  fastTransition?: number,
-  normalTransition: number,
-  slowTransition?: number,
+  settings:ThemeSettings,
+  input: ThemeInputsSettings,
 
   background: string;
   backgroundSnd: string;
@@ -45,8 +55,13 @@ export const lightTheme: Theme = {
   secondaryLight: '#936625ff',
   tertiary: '#FB8C50ff',
 
-  normalTransition: 400,
-  iconSize: 20
+  input: {
+    background: "#fff",
+  },
+  settings:{
+    normalTransition: 400,
+    iconSize: 20
+  }
 };
 
 export const darkTheme: Theme = {
@@ -68,8 +83,13 @@ export const darkTheme: Theme = {
   secondaryLight: '#5bc0de',
   tertiary: '#5bc0de',
 
-  normalTransition: 400,
-  iconSize: 20
+  settings:{
+    normalTransition: 400,
+    iconSize: 20
+  },
+  input:{
+    background: '#6a6a6a'
+  }
 };
 
 
