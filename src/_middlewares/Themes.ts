@@ -3,6 +3,10 @@ export interface Theme {
   contrast: string,
   contrastLight?: string,
 
+  fastTransition?: number,
+  normalTransition: number,
+  slowTransition?: number,
+
   background: string;
   backgroundSnd: string;
   backgroundTer: string;
@@ -39,6 +43,9 @@ export const lightTheme: Theme = {
   secondary: '#926386ff',
   secondaryLight: '#936625ff',
   tertiary: '#FB8C50ff',
+
+  normalTransition: 400,
+
 };
 
 export const darkTheme: Theme = {
@@ -59,6 +66,9 @@ export const darkTheme: Theme = {
   secondary: '#5bc0de',
   secondaryLight: '#5bc0de',
   tertiary: '#5bc0de',
+
+  normalTransition: 400,
+
 };
 
 
@@ -71,7 +81,6 @@ export abstract class ThemeController{
 
   public static toggle():void{
     ThemeController._isLight = !ThemeController._isLight
-    console.log(ThemeController._isLight)
     ThemeController.setTheme(ThemeController._isLight ? 'light' : 'dark')
   }
 

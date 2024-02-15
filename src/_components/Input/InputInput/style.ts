@@ -11,8 +11,10 @@ export const InputSty = styled.input<InputSty>`
     border-radius: 8px;
     padding: 2px 4px;
     color: ${prop => prop.theme.contrast};
-
+    
+    
     &[type="button"] {
+        transition: ${prop=>`${prop.theme.normalTransition}ms`};
         background-color: ${prop => prop.background || prop.theme.primary };
         font-weight: bold;
     }

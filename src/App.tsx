@@ -18,7 +18,7 @@ function App() {
         <Input.Input placeholder='Olá mundo'/>
         <Input.Icon />
       </Input.Field>
-        {/* <Input.Button text='olá'/> */}
+        <Input.Button text='olá'/>
       </Input.Root>
 
       <button onClick={()=>{

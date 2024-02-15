@@ -9,7 +9,7 @@ export const InputFieldSty = styled.div`
     border: 2px solid ${prop=> prop.theme.contrastLight};
     border-radius: 8px;
     padding: 12px;
-    transition: 400ms;
+    transition: ${prop=>`${prop.theme.normalTransition}ms`};
 
     &:hover{
         border: 2px solid ${prop=> prop.theme.contrast};
