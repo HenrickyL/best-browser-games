@@ -12,6 +12,14 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+
+      <button onClick={()=>{
+        ThemeController.toggle()
+        setTheme(ThemeController.getTheme())
+      }}>Theme</button>
+
+
+
       <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
