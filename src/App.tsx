@@ -3,6 +3,7 @@ import { ThemeController, lightTheme, Theme } from './_middlewares/Themes'
 import GlobalStyle from './globalCss'
 import { ThemeProvider } from 'styled-components'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Home } from './_pages/Home'
 
 
 function App() {
@@ -13,7 +14,9 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
             <Routes>
-                <Route path="/" element={<h1>Home</h1>} />
+                <Route path="/" element={<Home />} />
+                <Route path="*" element={<h1>NotFound</h1>} />
+
             </Routes>
       </BrowserRouter>
     </ThemeProvider>
