@@ -5,5 +5,6 @@ export const FormFieldGroupSty = styled.div`
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    justify-content: center;
     gap: 12px;
 `

@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import { FormFieldGroupSty } from "./style"
 
-interface FormFieldGroupProps{
+interface FormFieldGroupProps extends React.HTMLAttributes<HTMLDivElement>{
     children: ReactNode
 }
 
