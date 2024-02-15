@@ -4,8 +4,8 @@ import { InputInput } from "../InputInput";
 
 export const InputButtonSty = styled(InputInput)`
     background-color: ${prop=> prop.theme.primary};
-    padding: 1rem;
-
+    width: 100%;
+    height: 100%;
     &:hover{
         background-color: ${prop=> prop.theme.secondary};
     }

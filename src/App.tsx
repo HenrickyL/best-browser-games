@@ -13,14 +13,17 @@ function App() {
       
       <GlobalStyle />
       <h1>Olá Mundo</h1>
-      <Input.Root>
-      <Input.Field>
-        <Input.Input placeholder='Olá mundo'/>
-        <Input.Icon />
-      </Input.Field>
-        <Input.Button text='olá'/>
-      </Input.Root>
-
+      <div style={{width:500}}>
+        <Input.Root>
+        <Input.Field>
+          <Input.Input placeholder='Olá mundo'/>
+          <Input.Icon />
+        </Input.Field>
+        {/* <div style={{height: 50}}> */}
+          <Input.Button text='oláaaaaa'/>
+        {/* </div> */}
+        </Input.Root>
+      </div>
       <button onClick={()=>{
         ThemeController.toggle()
         setTheme(ThemeController.getTheme())

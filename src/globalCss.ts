@@ -13,13 +13,11 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     color: ${prop=>prop.theme.text};
+    background-color: ${(props) => props.theme.background};;
     display: flex;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    align-items: center;
-    justify-content: center;
-    background-color: ${(props) => props.theme.background};;
   }
 
   /* Redefinindo estilos específicos para inputs */
