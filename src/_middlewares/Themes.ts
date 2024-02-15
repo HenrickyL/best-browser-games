@@ -2,6 +2,7 @@ export interface Theme {
   text: string,
   contrast: string,
   contrastLight?: string,
+  iconSize: number,
 
   fastTransition?: number,
   normalTransition: number,
@@ -45,7 +46,7 @@ export const lightTheme: Theme = {
   tertiary: '#FB8C50ff',
 
   normalTransition: 400,
-
+  iconSize: 20
 };
 
 export const darkTheme: Theme = {
@@ -68,7 +69,7 @@ export const darkTheme: Theme = {
   tertiary: '#5bc0de',
 
   normalTransition: 400,
-
+  iconSize: 20
 };
 
 

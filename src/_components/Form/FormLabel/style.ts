@@ -6,4 +6,5 @@ export const FormLabelSty = styled.label`
     align-items:center;
     justify-content: center;
     height: 100%;
+    font-weight: bold;
 `

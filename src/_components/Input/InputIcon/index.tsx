@@ -8,8 +8,6 @@ interface InputIconProps{
 export const InputIcon = ({icon: Icon = Question, size }: InputIconProps)=>{
     const IconComponent: IconType = Icon || Question;
     return (
-        <>
         <IconComponent size = {size}/>
-        </>
     )
 }
