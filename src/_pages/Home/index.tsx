@@ -1,8 +1,19 @@
+import { Form } from "../../_components/Form"
+import { Input } from "../../_components/Input"
 
 export const Home = ()=>{
     return (
         <div>
-            <h1>Home Page</h1>
+            <Form.Root action="post">
+                <Form.Field>
+                    <Input.Root>
+                        <Input.Field>
+                            <Input.Icon />
+                            <Input.Input />
+                        </Input.Field>
+                    </Input.Root>
+                </Form.Field>
+            </Form.Root>
         </div>
     )
 }

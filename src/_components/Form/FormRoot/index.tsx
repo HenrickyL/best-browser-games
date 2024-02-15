@@ -2,13 +2,13 @@ import { ReactNode } from "react"
 import { FormRootSty } from "./style"
 
 interface FormRootProps extends React.FormHTMLAttributes<HTMLFormElement>{
-    chieldren: ReactNode
+    children: ReactNode
 }
 
-export const FormRoot = ({chieldren}: FormRootProps)=>{
+export const FormRoot = ({children}: FormRootProps)=>{
     return(
         <FormRootSty>
-            {chieldren}
+            {children}
         </FormRootSty>
     )
     
