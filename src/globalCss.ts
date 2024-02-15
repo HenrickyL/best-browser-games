@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { Colors } from './_middlewares/Color';
+import { lightTheme } from './_middlewares/Themes';
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -19,7 +19,24 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     align-items: center;
     justify-content: center;
-    background-color: ${Colors.background};
+    background-color: ${(props) => props.theme.background};;
+  }
+
+  /* Redefinindo estilos específicos para inputs */
+  input {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+  }
+
+  /* Redefinindo estilos específicos para botões */
+  button {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
 `;
 
