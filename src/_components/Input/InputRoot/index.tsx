@@ -1,4 +1,5 @@
 import { ReactNode } from "react"
+import { InputRootSty } from "./style"
 
 interface InputRoot{
     children: ReactNode
@@ -6,8 +7,8 @@ interface InputRoot{
 
 export const InputRoot = ({children}:InputRoot)=>{
     return (
-        <div>
+        <InputRootSty>
             {children}
-        </div>
+        </InputRootSty>
     )
 }

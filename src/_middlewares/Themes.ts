@@ -1,4 +1,8 @@
 export interface Theme {
+  text: string,
+  contrast: string,
+  contrastLight?: string,
+
   background: string;
   backgroundSnd: string;
   backgroundTer: string;
@@ -18,6 +22,9 @@ export interface Theme {
 }
 
 export const lightTheme: Theme = {
+  contrast: '#000',
+  contrastLight: '#a0a0a0',
+  text: '#000',
   background: '#F1F3FB',
   backgroundSnd: '#F3D68Bff',
   backgroundTer: '#F6B756ff',
@@ -35,6 +42,9 @@ export const lightTheme: Theme = {
 };
 
 export const darkTheme: Theme = {
+  text: '#fff',
+  contrast: '#fff',
+  contrastLight: '#dcdcdc',
   background: '#222',
   backgroundSnd: '#444',
   backgroundTer: '#666',
@@ -54,13 +64,18 @@ export const darkTheme: Theme = {
 
 export abstract class ThemeController{ 
   private static _currentTheme: Theme = lightTheme
-  
+  private static _isLight : boolean = true
   public static getTheme(): Theme {
     return ThemeController._currentTheme
   }
 
-  public static setTheme(value : 'dark' | 'light'):void{
+  public static toggle():void{
+    ThemeController._isLight = !ThemeController._isLight
+    console.log(ThemeController._isLight)
+    ThemeController.setTheme(ThemeController._isLight ? 'light' : 'dark')
+  }
 
+  public static setTheme(value : 'dark' | 'light'):void{
     if(value === 'dark'){
       ThemeController._currentTheme = darkTheme
     }else{

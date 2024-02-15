@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { lightTheme } from './_middlewares/Themes';
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -13,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    color: ${prop=>prop.theme.text};
     display: flex;
     width: 100vw;
     height: 100vh;
