@@ -39,6 +39,13 @@ const GlobalStyle = createGlobalStyle`
     background-color: transparent;
     color: ${prop=>prop.theme.text};
   }
+
+  input[type="checkbox"] {
+    /* -webkit-appearance: none; 
+    -moz-appearance: none; 
+    -ms-appearance: none;
+    -o-appearance: none;  */ 
+  }
 `;
 
 export default GlobalStyle;

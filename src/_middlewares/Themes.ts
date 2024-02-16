@@ -5,6 +5,12 @@ interface ThemeSettings{
   iconSize: number,
 
 }
+interface ThemeNotification{
+  success: string,
+  warning: string,
+  error: string,
+  report: string,
+}
 
 interface ThemeInputsSettings{
   background: string
@@ -17,6 +23,8 @@ export interface Theme {
 
   settings:ThemeSettings,
   input: ThemeInputsSettings,
+
+  notification: ThemeNotification,
 
   background: string;
   backgroundSnd: string;
@@ -61,6 +69,12 @@ export const lightTheme: Theme = {
   settings:{
     normalTransition: 400,
     iconSize: 20
+  },
+  notification:{
+    success: '#2ecc71',
+    warning: '#f39c12',
+    error: '#e74c3c',
+    report: '#3498db',
   }
 };
 
@@ -89,6 +103,12 @@ export const darkTheme: Theme = {
   },
   input:{
     background: '#6a6a6a'
+  },
+  notification:{
+    success: '#2ecc71',
+    warning: '#f39c12',
+    error: '#e74c3c',
+    report: '#3498db',
   }
 };
 
