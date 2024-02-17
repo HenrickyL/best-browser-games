@@ -7,6 +7,7 @@ import { Login } from './_pages/Login'
 import { Base } from './_pages/Base'
 import BaseServiceRoutes from './_routes/BaseServiceRoutes'
 import { Home } from './_pages/Home'
+import { Reviews } from './_pages/Reviews'
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<Base />}>
                   <Route path="/" element={<Home />} />
+                  <Route path="/reviews" element={<Reviews />} />
+                  <Route path="/*" element={<h1>Em construção</h1>} />
                 </Route>
                 <Route path="/auth" element={<Login />} />
                 <Route path="*" element={<h1>NotFound</h1>} />
