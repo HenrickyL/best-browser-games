@@ -6,6 +6,7 @@ export const SideBarRootSty = styled.nav`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
     padding: 1rem;
     width: 100px;

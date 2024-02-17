@@ -1,31 +1,26 @@
 import { SideBar } from "../../_components/SideBar"
-import {
-    IoHome as HomeIcon,
-    IoPerson as ProfileIcon
-} from 'react-icons/io5'
+import { services } from "../../_middlewares/SideBarServices"
 
 
 
-const items = [
-    {
-        text: 'Home',
-        icon:  HomeIcon,
-        to: '/'
-    },
-    {
-        text: 'Profile',
-        icon:  ProfileIcon,
-        to: '/2'
-    }
-]
+
+
 
 export const Home = ()=>{
     return (
         <div>
             <SideBar.Root >
-                {items.map(item=>
-                    <SideBar.Item icon={item.icon} text={item.text} to={item.to} />
-                    )}
+                <SideBar.Field>
+                    {services.main.map(item=>
+                        <SideBar.Item icon={item.icon} text={item.text} to={item.to} />
+                        )}
+                </SideBar.Field>
+
+                <SideBar.Field>
+                    {services.another.map(item=>
+                        <SideBar.Item icon={item.icon} text={item.text} to={item.to} />
+                        )}
+                </SideBar.Field>
             </SideBar.Root>
         </div>
     )
