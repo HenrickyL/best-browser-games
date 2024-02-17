@@ -16,6 +16,7 @@ export const SideBarLabelSty = styled.span`
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
+    transition-delay: 0;
 
     &:before{
         content: '';

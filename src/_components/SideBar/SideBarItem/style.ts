@@ -60,6 +60,7 @@ export const SideBarItemSty = styled(NavLink)`
         ${SideBarLabelSty}{
             opacity: 1;
             visibility: visible;
+            transition-delay: 0.5s;
         }
         ${SideBarIconSty}{
             color: ${prop=>prop.theme.primaryLight}

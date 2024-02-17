@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SideBarRootSty = styled.nav`
-    position: absolute;
+    position: relative;
     left: 0;
     display: flex;
     flex-direction: column;
