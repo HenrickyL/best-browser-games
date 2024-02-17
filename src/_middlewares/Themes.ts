@@ -28,7 +28,7 @@ export interface Theme {
   input: ThemeInputsSettings,
 
   notification: ThemeNotification,
-
+  headerBackground: string,
   background: string;
   backgroundSnd: string;
   backgroundTer: string;
@@ -51,6 +51,7 @@ export const lightTheme: Theme = {
   contrast: '#000',
   contrastLight: '#222',
   text: '#000',
+  headerBackground: '#faf',
   background: '#afafaf',
   backgroundSnd: '#aaaa',
   backgroundTer: '#F6B756ff',
@@ -86,6 +87,7 @@ export const darkTheme: Theme = {
   text: '#fff',
   contrast: '#fff',
   contrastLight: '#aaa',
+  headerBackground: '#faf',
   background: '#2f363e',
   backgroundSnd: '#1e252d',
   backgroundTer: '#666',

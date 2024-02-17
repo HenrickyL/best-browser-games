@@ -20,6 +20,11 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
   }
 
+  #root{
+    width: 100%;
+    height: 100%;
+  }
+
   /* Redefinindo estilos específicos para inputs */
   input {
     font-family: inherit;

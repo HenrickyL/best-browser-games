@@ -1,7 +1,8 @@
 import { Outlet } from "react-router-dom"
 import { SideBar } from "../../_components/SideBar"
 import { services } from "../../_middlewares/SideBarServices"
-import { BaseSty } from "./style"
+import { BaseDivSty, BaseSty } from "./style"
+import { Header } from "../../_components/Header"
 
 
 export const Base = ()=>{
@@ -20,9 +21,16 @@ export const Base = ()=>{
                         )}
                 </SideBar.Field>
             </SideBar.Root>
-            <main>
-                <Outlet />
-            </main>
+            <BaseDivSty>
+                <Header.Root>
+                    <Header.Field />
+                    <h1>Logo</h1>
+                    <Header.Field />
+                </Header.Root>
+                <main>
+                    <Outlet />
+                </main>
+            </BaseDivSty>
         </BaseSty>
     )
 }
