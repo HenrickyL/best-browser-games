@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
-interface ThemeToggleStyProps{
-    isLight: boolean
-}
-export const ThemeToggleSty = styled.div<ThemeToggleStyProps>`
+
+export const ThemeToggleSty = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;

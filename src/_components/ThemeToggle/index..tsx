@@ -15,14 +15,9 @@ export const ThemeToggle = ()=>{
     const handleClick = ()=>{
         ThemeController.toggle()
         setTheme(ThemeController.getTheme())
-        // if(theme == lightTheme){
-        //     setCurrenIcon(LightIcon)
-        // }else{
-        //     setCurrenIcon(DarkIcon)
-        // }
     }
     return (
-        <ThemeToggleSty isLight={theme !== darkTheme} onClick={handleClick}>
+        <ThemeToggleSty onClick={handleClick}>
             <Icon icon={theme === darkTheme ? LightIcon : DarkIcon} />
         </ThemeToggleSty>
     )
