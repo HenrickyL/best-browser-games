@@ -4,6 +4,7 @@ import GlobalStyle from './globalCss'
 import { ThemeProvider } from 'styled-components'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Home } from './_pages/Home'
+import { Login } from './_pages/Login'
 
 
 function App() {
@@ -23,8 +24,8 @@ function App() {
       <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/auth/login" element={<Login />} />
                 <Route path="*" element={<h1>NotFound</h1>} />
-
             </Routes>
       </BrowserRouter>
     </ThemeProvider>
