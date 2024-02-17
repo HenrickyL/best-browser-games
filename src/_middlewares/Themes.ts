@@ -1,11 +1,30 @@
+interface ThemeSettings{
+  fastTransition?: number,
+  normalTransition: number,
+  slowTransition?: number,
+  iconSize: number,
+
+}
+interface ThemeNotification{
+  success: string,
+  warning: string,
+  error: string,
+  report: string,
+}
+
+interface ThemeInputsSettings{
+  background: string
+}
+
 export interface Theme {
   text: string,
   contrast: string,
   contrastLight?: string,
 
-  fastTransition?: number,
-  normalTransition: number,
-  slowTransition?: number,
+  settings:ThemeSettings,
+  input: ThemeInputsSettings,
+
+  notification: ThemeNotification,
 
   background: string;
   backgroundSnd: string;
@@ -44,8 +63,19 @@ export const lightTheme: Theme = {
   secondaryLight: '#936625ff',
   tertiary: '#FB8C50ff',
 
-  normalTransition: 400,
-
+  input: {
+    background: "#fff",
+  },
+  settings:{
+    normalTransition: 400,
+    iconSize: 20
+  },
+  notification:{
+    success: '#2ecc71',
+    warning: '#f39c12',
+    error: '#e74c3c',
+    report: '#3498db',
+  }
 };
 
 export const darkTheme: Theme = {
@@ -67,8 +97,19 @@ export const darkTheme: Theme = {
   secondaryLight: '#5bc0de',
   tertiary: '#5bc0de',
 
-  normalTransition: 400,
-
+  settings:{
+    normalTransition: 400,
+    iconSize: 20
+  },
+  input:{
+    background: '#6a6a6a'
+  },
+  notification:{
+    success: '#2ecc71',
+    warning: '#f39c12',
+    error: '#e74c3c',
+    report: '#3498db',
+  }
 };
 
 

@@ -1,12 +1,17 @@
+import { IconType } from "react-icons"
 import { InputButtonSty } from "./style"
 
-interface InputButtonProps{
+interface InputButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
     text?: string
+    icon?: IconType
 }
 
 
-export const InputButton = (prop: InputButtonProps)=>{
+export const InputButton = (props: InputButtonProps)=>{
     return (
-        <InputButtonSty value={prop.text || "button" } type="button"/>
+        <InputButtonSty >
+            {props.icon && <props.icon />}
+            {props.text}
+        </InputButtonSty>
     )
 }

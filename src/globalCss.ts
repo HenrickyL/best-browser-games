@@ -26,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: inherit;
     border: none;
     outline: none;
+    background-color: transparent;
   }
 
   /* Redefinindo estilos específicos para botões */
@@ -35,6 +36,15 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     outline: none;
     cursor: pointer;
+    background-color: transparent;
+    color: ${prop=>prop.theme.text};
+  }
+
+  input[type="checkbox"] {
+    /* -webkit-appearance: none; 
+    -moz-appearance: none; 
+    -ms-appearance: none;
+    -o-appearance: none;  */ 
   }
 `;
 
