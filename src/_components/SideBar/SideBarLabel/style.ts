@@ -6,7 +6,7 @@ export const SideBarLabelSty = styled.span`
     align-items: center;
     flex-direction: column;
     position: absolute;
-    left: 80px;
+    left: 60px;
     font-size: 1.25em;
     background-color: ${prop=>prop.theme.primaryLight};
     padding: 4px 15px;

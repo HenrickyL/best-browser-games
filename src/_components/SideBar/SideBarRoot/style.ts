@@ -7,9 +7,7 @@ export const SideBarRootSty = styled.nav`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    padding: 1rem;
-    width: 100px;
+    width: 60px;
     height: 100%;
     background: #2f363e;
     box-shadow: 25px 25px 75px rgba(0,0,0,0.25),

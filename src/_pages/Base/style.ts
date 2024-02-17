@@ -5,7 +5,7 @@ export const BaseSty = styled.div`
     flex-direction: row;
     width: 100%;
     height: 100%;
-    gap: 50px;
+    gap: 36px;
 
     main{
         width: 100%;

@@ -9,21 +9,21 @@ export const SideBarIconSty = styled.span`
     border-radius: 50%;
     transition: 0.5s;
     transition-delay: 0.2s;
-    color: #aaa;
-    width: 80px;
-    height: 80px;
+    color: ${prop=>prop.theme.white3 || '#aaa'};
+    width: 52px;
+    height: 52px;
 
     svg{
         font-size: 1.75em;
-        width: 40%;
-        height: 40%;
+        width: 44%;
+        height: 44%;
         z-index: 1;
     }
 
     &:before{
         content: '';
         position: absolute;
-        inset: 10px;
+        inset: 4px ;
         background-color: ${prop=>prop.theme.background};
         border-radius: 50%;
         box-shadow: 5px 5px 5px rgba(0,0,0, 0.5),

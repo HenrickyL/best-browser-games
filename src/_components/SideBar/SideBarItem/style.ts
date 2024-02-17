@@ -5,32 +5,31 @@ import { SideBarLabelSty } from "../SideBarLabel/style";
 
 export const SideBarItemSty = styled(NavLink)`
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 5px;
 
     &::before{
         content: '';
         top: calc(50% - 2.5px);
         position: absolute;
-        left: 20px;
-        width: 5px;
-        height: 5px;
+        left: 8px;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
         transition: 0.5s;
     }
 
     &.active{
         &:hover ${SideBarLabelSty}{
-            left: 140px;
+            left: 80px;
             opacity: 1;
             visibility: visible;
         }
         & ${SideBarIconSty}{
-            transform: translate(45px);
+            transform: translate(20px);
             color: ${prop=>prop.theme.white};
             background-color:  ${prop=>prop.theme.primaryLight};
             box-shadow: 5px 5px 7px rgba(0,0,0,0.25),
