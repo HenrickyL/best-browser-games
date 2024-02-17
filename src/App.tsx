@@ -1,22 +1,23 @@
 import { useEffect, useState } from 'react'
-import { ThemeController, lightTheme, Theme } from './_middlewares/Themes'
+import { ThemeController, Theme } from './_middlewares/Themes'
 import GlobalStyle from './globalCss'
 import { ThemeProvider } from 'styled-components'
-import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Login } from './_pages/Login'
 import { Base } from './_pages/Base'
-import BaseServiceRoutes from './_routes/BaseServiceRoutes'
 import { Home } from './_pages/Home'
 import { Reviews } from './_pages/Reviews'
 
-ThemeController.setTheme('dark')
-
 function App() {
   const [theme, setTheme] = useState<Theme>(ThemeController.getTheme())
+
+  useEffect(()=>{
+    ThemeController.setDispatchTheme(setTheme)
+  },[])
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-
       {/* //TODO: usar useRouterError para redirecionar a rota  */}
       <BrowserRouter>
             <Routes>

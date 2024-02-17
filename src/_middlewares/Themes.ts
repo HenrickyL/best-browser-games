@@ -55,9 +55,9 @@ export const lightTheme: Theme = {
   background: '#afafaf',
   backgroundSnd: '#aaaa',
   backgroundTer: '#F6B756ff',
-  black: '#000000',
-  black2: '#2a2a2a',
-  black3: '#4a4a4a',
+  black: '#000',
+  black2: '#3a3a3a',
+  black3: '#5a5a5a',
   white: '#FEFFFE',
   white2: '#F0F0F0',
   white3: '#EFEFEF',
@@ -91,12 +91,12 @@ export const darkTheme: Theme = {
   background: '#2f363e',
   backgroundSnd: '#1e252d',
   backgroundTer: '#666',
-  black: '#fff',
-  black2: '#ccc',
-  black3: '#999',
-  white: '#000',
-  white2: '#333',
-  white3: '#666',
+  black: '#000',
+  black2: '#3a3a3a',
+  black3: '#5a5a5a',
+  white: '#FFF',
+  white2: '#F0F0F0',
+  white3: '#EFEFEF',
   gray: '#888',
   primary: '#0f0',
   primaryLight: '#29fd53',
@@ -123,6 +123,7 @@ export const darkTheme: Theme = {
 export abstract class ThemeController{ 
   private static _currentTheme: Theme = lightTheme
   private static _isLight : boolean = true
+  private static _dispatch: React.Dispatch<React.SetStateAction<Theme>> | null = null
   public static getTheme(): Theme {
     return ThemeController._currentTheme
   }
@@ -132,11 +133,19 @@ export abstract class ThemeController{
     ThemeController.setTheme(ThemeController._isLight ? 'light' : 'dark')
   }
 
+  public static setDispatchTheme(value: React.Dispatch<React.SetStateAction<Theme>>):void{
+    ThemeController._dispatch = value
+  }
+
+
   public static setTheme(value : 'dark' | 'light'):void{
     if(value === 'dark'){
       ThemeController._currentTheme = darkTheme
     }else{
       ThemeController._currentTheme = lightTheme
+    }
+    if(ThemeController._dispatch){
+      ThemeController._dispatch(ThemeController._currentTheme)
     }
   }
 }
