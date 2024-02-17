@@ -19,7 +19,7 @@ function App() {
       }}>Theme</button>
 
 
-
+      {/* //TODO: usar useRouterError para redirecionar a rota  */}
       <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />

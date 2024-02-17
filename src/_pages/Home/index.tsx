@@ -7,7 +7,7 @@ export const Home = ()=>{
     return (
         <div>
             <Form.Root action="post">
-                <Form.FieldGroup id="aaa">
+                <Form.Field id="aaa">
                     <Form.Label for="email" text="Email"/>
                     <Input.Root>
                         <Input.Field>
@@ -15,14 +15,22 @@ export const Home = ()=>{
                             <Input.Input id="email" placeholder="Email"/>
                         </Input.Field>
                     </Input.Root>
-                </Form.FieldGroup>
-
-                <Form.Field id="bbb">
-                    <Form.Label for="password" text="Password"/>
-                    <Input.Root>
-                        <Input.Password placeholder="Password"/>
-                    </Input.Root>
                 </Form.Field>
+                <Form.FieldGroup>
+                    <Form.Field id="bbb">
+                        <Form.Label for="password" text="Password"/>
+                        <Input.Root>
+                            <Input.Password placeholder="Password"/>
+                        </Input.Root>
+                    </Form.Field>
+
+                    <Form.Field id="ccc">
+                        <Form.Label for="password" text="Password"/>
+                        <Input.Root>
+                            <Input.Password placeholder="Password"/>
+                        </Input.Root>
+                    </Form.Field>
+                </Form.FieldGroup>
             </Form.Root>
         </div>
     )
