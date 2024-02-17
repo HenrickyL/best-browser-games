@@ -14,16 +14,16 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
 
-      <button onClick={()=>{
+      {/* <button onClick={()=>{
         ThemeController.toggle()
         setTheme(ThemeController.getTheme())
-      }}>Theme</button>
+      }}>Theme</button> */}
 
 
       {/* //TODO: usar useRouterError para redirecionar a rota  */}
       <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/*" element={<Home />} />
                 <Route path="/auth/login" element={<Login />} />
                 <Route path="*" element={<h1>NotFound</h1>} />
             </Routes>

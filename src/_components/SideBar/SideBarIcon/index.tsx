@@ -1,5 +1,6 @@
 import { IconType } from "react-icons"
 import { SideBarIconSty } from "./style"
+import { Icon } from "../../Icon"
 
 interface SideBarIconProps{
     size?: number
@@ -8,6 +9,8 @@ interface SideBarIconProps{
 
 export const SideBarIcon = ({icon, size}: SideBarIconProps)=>{
     return(
-        <SideBarIconSty icon={icon} size={size} />
+        <SideBarIconSty >
+            <Icon icon={icon} size={size}/>
+        </SideBarIconSty>
     )
 }
