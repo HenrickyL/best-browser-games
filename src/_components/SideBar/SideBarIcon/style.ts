@@ -9,7 +9,7 @@ export const SideBarIconSty = styled.span`
     border-radius: 50%;
     transition: 0.5s;
     transition-delay: 0.2s;
-    color: ${prop=>prop.theme.white3 || '#aaa'};
+    color: ${prop=>prop.theme.contrastLight || '#aaa'};
     width: 52px;
     height: 52px;
 

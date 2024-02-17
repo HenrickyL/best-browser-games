@@ -8,6 +8,7 @@ export const SideBarLabelSty = styled.span`
     position: absolute;
     left: 60px;
     font-size: 1.25em;
+    color: ${prop=>prop.theme.text2 || '#3a3a3a'};
     background-color: ${prop=>prop.theme.primaryLight};
     padding: 4px 15px;
     border-radius: 15px;

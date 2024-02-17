@@ -30,14 +30,14 @@ export const SideBarItemSty = styled(NavLink)`
         }
         & ${SideBarIconSty}{
             transform: translate(20px);
-            color: ${prop=>prop.theme.white};
+            color: ${prop=>prop.theme.contrast};
             background-color:  ${prop=>prop.theme.primaryLight};
             box-shadow: 5px 5px 7px rgba(0,0,0,0.25),
             inset 2px 2px 3px rgba(255,255,255,0.25),
             inset -3px -3px 5px rgba(0,0,0,0.5);
             transition-delay: 0s;
             &:hover{
-                color: ${prop=>prop.theme.white2};
+                color: ${prop=>prop.theme.contrast};
             }
             &::before{
                 transform: scale(1);

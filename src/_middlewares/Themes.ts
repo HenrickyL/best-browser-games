@@ -18,6 +18,9 @@ interface ThemeInputsSettings{
 
 export interface Theme {
   text: string,
+  text2?: string,
+  text3?: string,
+
   contrast: string,
   contrastLight?: string,
 
@@ -46,10 +49,10 @@ export interface Theme {
 
 export const lightTheme: Theme = {
   contrast: '#000',
-  contrastLight: '#a0a0a0',
+  contrastLight: '#222',
   text: '#000',
-  background: '#2f363e',
-  backgroundSnd: '#F3D68Bff',
+  background: '#afafaf',
+  backgroundSnd: '#aaaa',
   backgroundTer: '#F6B756ff',
   black: '#000000',
   black2: '#2a2a2a',
@@ -82,9 +85,9 @@ export const lightTheme: Theme = {
 export const darkTheme: Theme = {
   text: '#fff',
   contrast: '#fff',
-  contrastLight: '#dcdcdc',
-  background: '#222',
-  backgroundSnd: '#444',
+  contrastLight: '#aaa',
+  background: '#2f363e',
+  backgroundSnd: '#1e252d',
   backgroundTer: '#666',
   black: '#fff',
   black2: '#ccc',
@@ -93,7 +96,8 @@ export const darkTheme: Theme = {
   white2: '#333',
   white3: '#666',
   gray: '#888',
-  primary: '#337ab7',
+  primary: '#0f0',
+  primaryLight: '#29fd53',
   secondary: '#5bc0de',
   secondaryLight: '#5bc0de',
   tertiary: '#5bc0de',

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ThemeController, lightTheme, Theme } from './_middlewares/Themes'
 import GlobalStyle from './globalCss'
 import { ThemeProvider } from 'styled-components'
@@ -9,10 +9,10 @@ import BaseServiceRoutes from './_routes/BaseServiceRoutes'
 import { Home } from './_pages/Home'
 import { Reviews } from './_pages/Reviews'
 
+ThemeController.setTheme('dark')
 
 function App() {
-  const [theme, setTheme] = useState<Theme>(lightTheme)
-
+  const [theme, setTheme] = useState<Theme>(ThemeController.getTheme())
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
