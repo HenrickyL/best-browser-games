@@ -46,6 +46,23 @@ const GlobalStyle = createGlobalStyle`
     -ms-appearance: none;
     -o-appearance: none;  */ 
   }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
 `;
 
 export default GlobalStyle;
