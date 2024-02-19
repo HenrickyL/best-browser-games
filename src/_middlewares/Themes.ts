@@ -84,9 +84,9 @@ export const lightTheme: Theme = {
 export const darkTheme: Theme = {
   text: '#fff',
   contrast: '#fff',
-  contrastLight: '#aaa',
+  contrastLight: '#777',
   background: '#25252b',
-  backgroundSnd: '#2d2d39',
+  backgroundSnd: '#2a2d39',
   backgroundTer: '#666',
   black: '#000',
   black2: '#3a3a3a',

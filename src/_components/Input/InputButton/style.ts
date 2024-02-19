@@ -6,7 +6,7 @@ export const InputButtonSty = styled.button`
    padding: 0.5rem 1rem ;
    border-radius: 8px;
    background-color: ${prop=>prop.theme.primary};
-   border: 2px solid ${prop=>prop.theme.contrastLight};
+   border: 2px solid ${prop=>prop.theme.primaryLight};
    transition: 0.5s;
 
    &:hover, &:focus{

@@ -65,7 +65,7 @@ export const LoginDivSty =  styled.div`
 
     &:hover, &:focus-within {
         width: 25rem;
-        height: 28.125rem;
+        height: 20rem;
         ${FormRootSty}{
             inset: 40px;
             ${FormFieldGroupSty}, ${FormFieldSty}, ${InputButtonSty}{
@@ -75,6 +75,11 @@ export const LoginDivSty =  styled.div`
                 position: relative;
                 transition: 0.5s;
                 transition-delay: 0.1s;
+            }
+
+            ${InputButtonSty}{
+                box-shadow: 0 0 4px ${prop=>prop.theme.primaryLight},
+                0 0 10px ${prop=>prop.theme.primaryLight};
             }
         }
 
@@ -110,6 +115,11 @@ export const LoginSty = styled.div`
             opacity: 0;
             transform: scale(0);
             position: absolute;
+        }
+
+        ${InputButtonSty}:hover{
+            box-shadow: 0 0 10px ${prop=>prop.theme.primaryLight},
+            0 0 40px ${prop=>prop.theme.primaryLight};
         }
     }
    
