@@ -68,6 +68,12 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
   }
 
+  /* property */
+  @property  --angle{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+  }
 `;
 
 export default GlobalStyle;

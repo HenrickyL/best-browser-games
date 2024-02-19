@@ -85,8 +85,8 @@ export const darkTheme: Theme = {
   text: '#fff',
   contrast: '#fff',
   contrastLight: '#aaa',
-  background: '#2f363e',
-  backgroundSnd: '#1e252d',
+  background: '#25252b',
+  backgroundSnd: '#2d2d39',
   backgroundTer: '#666',
   black: '#000',
   black2: '#3a3a3a',
@@ -96,7 +96,7 @@ export const darkTheme: Theme = {
   white3: '#EFEFEF',
   gray: '#888',
   primary: '#0f0',
-  primaryLight: '#29fd53',
+  primaryLight: '#3f3',
   secondary: '#5bc0de',
   secondaryLight: '#5bc0de',
   tertiary: '#5bc0de',
@@ -106,7 +106,7 @@ export const darkTheme: Theme = {
     iconSize: 20
   },
   input:{
-    background: '#6a6a6a'
+    background: '#4a5a4a'
   },
   notification:{
     success: '#2ecc71',
