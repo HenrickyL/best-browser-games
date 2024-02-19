@@ -70,8 +70,8 @@ export const LoginDivSty =  styled.div`
             inset: 40px;
             ${FormFieldGroupSty}, ${FormFieldSty}, ${InputButtonSty}{
                 display: flex;
-                transform: scale(1);
-                opacity: 100%;
+                opacity: 100%; 
+                transform: translateY(0);
                 position: relative;
                 transition: 0.5s;
                 transition-delay: 0.1s;
@@ -109,11 +109,13 @@ export const LoginSty = styled.div`
         box-shadow: inset 0 10px 20px rgba(0,0,0,0.5);
         z-index: 10;
         transition: 0.5s;
+        overflow: hidden;
+
 
         ${FormFieldGroupSty}, ${FormFieldSty}, ${InputButtonSty}{
             transition: 0;
-            opacity: 0;
-            transform: scale(0);
+            opacity: 0%; 
+            transform: translateY(126px);
             position: absolute;
         }
 
