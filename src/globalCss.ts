@@ -20,6 +20,11 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
   }
 
+  #root{
+    width: 100%;
+    height: 100%;
+  }
+
   /* Redefinindo estilos específicos para inputs */
   input {
     font-family: inherit;
@@ -45,6 +50,29 @@ const GlobalStyle = createGlobalStyle`
     -moz-appearance: none; 
     -ms-appearance: none;
     -o-appearance: none;  */ 
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* property */
+  @property  --angle{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
   }
 `;
 

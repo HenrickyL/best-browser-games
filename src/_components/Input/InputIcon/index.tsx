@@ -1,15 +1,13 @@
 import { IconType } from 'react-icons';
-import { FaQuestion as Question } from "react-icons/fa6";
-import { ThemeController } from '../../../_middlewares/Themes';
+import { Icon } from '../../Icon';
+
 interface InputIconProps{
     icon?: IconType
     size?: number
 }
 
-export const InputIcon = ({icon: Icon = Question, size }: InputIconProps)=>{
-    const IconComponent: IconType = Icon || Question;
-    const IconThemeSize = ThemeController.getTheme().settings.iconSize
+export const InputIcon = ({icon, size }: InputIconProps)=>{
     return (
-        <IconComponent size={size || IconThemeSize}/>
+        <Icon icon={icon} size={size}/>
     )
 }

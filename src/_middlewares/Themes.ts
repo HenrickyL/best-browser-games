@@ -18,6 +18,9 @@ interface ThemeInputsSettings{
 
 export interface Theme {
   text: string,
+  text2?: string,
+  text3?: string,
+
   contrast: string,
   contrastLight?: string,
 
@@ -25,7 +28,6 @@ export interface Theme {
   input: ThemeInputsSettings,
 
   notification: ThemeNotification,
-
   background: string;
   backgroundSnd: string;
   backgroundTer: string;
@@ -46,19 +48,20 @@ export interface Theme {
 
 export const lightTheme: Theme = {
   contrast: '#000',
-  contrastLight: '#a0a0a0',
+  contrastLight: '#222',
   text: '#000',
-  background: '#F1F3FB',
-  backgroundSnd: '#F3D68Bff',
+  background: '#fff',
+  backgroundSnd: '#dff0df',
   backgroundTer: '#F6B756ff',
-  black: '#000000',
-  black2: '#2a2a2a',
-  black3: '#4a4a4a',
+  black: '#000',
+  black2: '#3a3a3a',
+  black3: '#5a5a5a',
   white: '#FEFFFE',
   white2: '#F0F0F0',
   white3: '#EFEFEF',
   gray: '#6C6C6D',
-  primary: '#583D72',
+  primary: '#0f0',
+  primaryLight: '#29fd53',
   secondary: '#926386ff',
   secondaryLight: '#936625ff',
   tertiary: '#FB8C50ff',
@@ -81,18 +84,19 @@ export const lightTheme: Theme = {
 export const darkTheme: Theme = {
   text: '#fff',
   contrast: '#fff',
-  contrastLight: '#dcdcdc',
-  background: '#222',
-  backgroundSnd: '#444',
+  contrastLight: '#777',
+  background: '#25252b',
+  backgroundSnd: '#2a2d39',
   backgroundTer: '#666',
-  black: '#fff',
-  black2: '#ccc',
-  black3: '#999',
-  white: '#000',
-  white2: '#333',
-  white3: '#666',
+  black: '#000',
+  black2: '#3a3a3a',
+  black3: '#5a5a5a',
+  white: '#FFF',
+  white2: '#F0F0F0',
+  white3: '#EFEFEF',
   gray: '#888',
-  primary: '#337ab7',
+  primary: '#0f0',
+  primaryLight: '#3f3',
   secondary: '#5bc0de',
   secondaryLight: '#5bc0de',
   tertiary: '#5bc0de',
@@ -102,7 +106,7 @@ export const darkTheme: Theme = {
     iconSize: 20
   },
   input:{
-    background: '#6a6a6a'
+    background: '#4a5a4a'
   },
   notification:{
     success: '#2ecc71',
@@ -114,8 +118,9 @@ export const darkTheme: Theme = {
 
 
 export abstract class ThemeController{ 
-  private static _currentTheme: Theme = lightTheme
+  private static _currentTheme: Theme = darkTheme
   private static _isLight : boolean = true
+  private static _dispatch: React.Dispatch<React.SetStateAction<Theme>> | null = null
   public static getTheme(): Theme {
     return ThemeController._currentTheme
   }
@@ -125,11 +130,19 @@ export abstract class ThemeController{
     ThemeController.setTheme(ThemeController._isLight ? 'light' : 'dark')
   }
 
+  public static setDispatchTheme(value: React.Dispatch<React.SetStateAction<Theme>>):void{
+    ThemeController._dispatch = value
+  }
+
+
   public static setTheme(value : 'dark' | 'light'):void{
     if(value === 'dark'){
       ThemeController._currentTheme = darkTheme
     }else{
       ThemeController._currentTheme = lightTheme
+    }
+    if(ThemeController._dispatch){
+      ThemeController._dispatch(ThemeController._currentTheme)
     }
   }
 }
