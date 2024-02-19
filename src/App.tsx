@@ -3,7 +3,7 @@ import { ThemeController, Theme } from './_middlewares/Themes'
 import GlobalStyle from './globalCss'
 import { ThemeProvider } from 'styled-components'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Login } from './_pages/Login'
+import { Authentication } from './_pages/Authentication'
 import { Base } from './_pages/Base'
 import { Home } from './_pages/Home'
 import { Reviews } from './_pages/Reviews'
@@ -26,7 +26,7 @@ function App() {
                   <Route path="/reviews" element={<Reviews />} />
                   <Route path="/*" element={<h1>Em construção</h1>} />
                 </Route>
-                <Route path="/auth" element={<Login />} />
+                <Route path="/auth" element={<Authentication />} />
                 <Route path="*" element={<h1>NotFound</h1>} />
             </Routes>
       </BrowserRouter>

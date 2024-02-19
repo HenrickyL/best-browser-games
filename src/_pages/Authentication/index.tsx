@@ -3,7 +3,7 @@ import { Form } from "../../_components/Form"
 import { Input } from "../../_components/Input"
 import { MdOutlineAlternateEmail as EmailIcon } from "react-icons/md";
 
-export const Login = ()=>{
+export const Authentication = ()=>{
     return(
         <LoginSty>
             <Form.Root action="post">
