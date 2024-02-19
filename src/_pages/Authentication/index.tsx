@@ -1,101 +1,35 @@
-import { LoginDivSty, LoginSty, SpanSty } from "./style"
+import { SpanSty } from "./style"
 import { Form } from "../../_components/Form"
 import { Input } from "../../_components/Input"
-import { MdOutlineAlternateEmail as EmailIcon } from "react-icons/md";
 import { Icon } from "../../_components/Icon";
 
-import { MdLogin as LoginIcon} from "react-icons/md";
 
 import { 
-    FaHeart as HeartIcon,
-    FaUser as SignUpIcon } from "react-icons/fa";
+    FaHeart as HeartIcon } from "react-icons/fa";
 import { IconType } from "react-icons";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 
-const Login = ()=>{
-    return(
-        <>
-            <Form.Field id="aaa">
-                <Input.Root>
-                    <Input.Field>
-                        <Input.Icon icon={EmailIcon} />
-                        <Input.Input id="email" placeholder="Email"/>
-                    </Input.Field>
-                </Input.Root>
-            </Form.Field>
-            <Form.Field id="ccc">
-                    <Input.Root>
-                        <Input.Password placeholder="Password"/>
-                    </Input.Root>
-            </Form.Field>
-            <Form.Field id="ccc">
-                    <Input.Root>
-                        <Input.Password placeholder="Password"/>
-                    </Input.Root>
-            </Form.Field>
-        </>
-    )
-}
 
-
-const SignUp = ()=>{
-    return(
-        <>
-            <Form.Field id="aaa">
-                <Input.Root>
-                    <Input.Field>
-                        <Input.Icon icon={EmailIcon} />
-                        <Input.Input id="email" placeholder="Email"/>
-                    </Input.Field>
-                </Input.Root>
-            </Form.Field>
-            <Form.Field id="ccc">
-                    <Input.Root>
-                        <Input.Password placeholder="Password"/>
-                    </Input.Root>
-            </Form.Field>
-        </>
-    )
-}
-interface Content{
+export interface Content{
     title: string,
     icon: IconType,
     component: ReactNode,
-    toggle: string,
+    toText: string,
+    to: string,
     buttonTitle: string
 
 }
 
-
-const loginContent : Content = {
-    icon: LoginIcon,
-    title: 'Login',
-    component: <Login />,
-    toggle: 'sign-up',
-    buttonTitle: 'Sign-in'
+interface BaseProp{
+    content: Content
 }
 
-const signUpContent : Content = {
-    icon: SignUpIcon,
-    title: 'Sign Up',
-    component: <SignUp />,
-    toggle: 'login',
-    buttonTitle: 'Sign-up'
-
-}
-
-export const Authentication = ()=>{
-    const [content, setContent] = useState<Content>(loginContent)
-
-
-    const handleToggleClick = ()=>{
-        setContent(content == loginContent ? signUpContent : loginContent)
-    }
+export const AuthBase = ({content}:BaseProp )=>{
     return(
-        <LoginSty>
-            <LoginDivSty>
-                <Form.Root  action="post">
+        <>
+        <Form.Root  action="post">
                     <Form.Title >
                         <Icon icon={content.icon}/>
                         <h2>{content.title}</h2>
@@ -103,13 +37,12 @@ export const Authentication = ()=>{
                     </Form.Title>
                     {content.component}
                     <Input.Button type="submit" text={content.buttonTitle}/>
-                    <SpanSty onClick={handleToggleClick}>
-                        <span>
-                            {content.toggle}
-                        </span>
+                    <SpanSty>
+                        <Link to={content.to}>
+                            {content.toText}
+                        </Link>
                     </SpanSty>
-                    </Form.Root>
-            </LoginDivSty>
-        </LoginSty>
+        </Form.Root>
+        </>
     )
 }
