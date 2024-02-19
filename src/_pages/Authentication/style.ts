@@ -13,6 +13,26 @@ const rotating = keyframes`
   }
 `
 
+
+export const SpanSty = styled.div`
+    color: ${prop=>prop.theme.secondaryLight};
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    & span{
+        transition: 0.5s;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    & span:hover {
+        color: ${prop=>prop.theme.secondary};
+        text-shadow: 0 0 5px ${prop=>prop.theme.secondary},
+        0 0 10px ${prop=>prop.theme.secondary};
+    }
+`
+
 export const LoginDivSty =  styled.div`
     position: relative;
     width: 25rem;
@@ -65,10 +85,10 @@ export const LoginDivSty =  styled.div`
 
     &:hover, &:focus-within {
         width: 25rem;
-        height: 20rem;
+        height: 22rem;
         ${FormRootSty}{
             inset: 40px;
-            ${FormFieldGroupSty}, ${FormFieldSty}, ${InputButtonSty}{
+            ${FormFieldGroupSty}, ${FormFieldSty}, ${InputButtonSty}, ${SpanSty}{
                 display: flex;
                 opacity: 100%; 
                 transform: translateY(0);
@@ -112,7 +132,7 @@ export const LoginSty = styled.div`
         overflow: hidden;
 
 
-        ${FormFieldGroupSty}, ${FormFieldSty}, ${InputButtonSty}{
+        ${FormFieldGroupSty}, ${FormFieldSty}, ${InputButtonSty}, ${SpanSty}{
             transition: 0;
             opacity: 0%; 
             transform: translateY(126px);
@@ -126,3 +146,5 @@ export const LoginSty = styled.div`
     }
    
 `
+
+
