@@ -30,18 +30,18 @@ export const AuthBase = ({content}:BaseProp )=>{
     return(
         <>
         <Form.Root  action="post">
-                    <Form.Title >
-                        <Icon icon={content.icon}/>
-                        <h2>{content.title}</h2>
-                        <Icon icon={HeartIcon}/>
-                    </Form.Title>
-                    {content.component}
-                    <Input.Button type="submit" text={content.buttonTitle}/>
-                    <SpanSty>
-                        <Link to={content.to}>
-                            {content.toText}
-                        </Link>
-                    </SpanSty>
+            <Form.Title >
+                <Icon icon={content.icon}/>
+                <h2>{content.title}</h2>
+                <Icon icon={HeartIcon}/>
+            </Form.Title>
+            {content.component}
+            <Input.Button type="submit" text={content.buttonTitle}/>
+            <SpanSty>
+                <Link to={content.to}>
+                    {content.toText}
+                </Link>
+            </SpanSty>
         </Form.Root>
         </>
     )

@@ -5,6 +5,7 @@ import { LoginDivSty, LoginSty } from "../style"
 import { MdOutlineAlternateEmail as EmailIcon } from "react-icons/md";
 import {FaUser as UserIcon } from "react-icons/fa";
 import { BiWorld, BiMap } from 'react-icons/bi';
+import { SignUpDivSty, SignUpSty } from "./style";
 
 const SignUpContent = ()=>{
     return(
@@ -69,10 +70,10 @@ const signUpContent : Content = {
 
 export const SignUp = ()=>{
     return(
-        <LoginSty>
-            <LoginDivSty>
+        <SignUpSty>
+            <SignUpDivSty>
                 <AuthBase content={signUpContent} />
-            </LoginDivSty>
-        </LoginSty> 
+            </SignUpDivSty>
+        </SignUpSty> 
     )
 }
