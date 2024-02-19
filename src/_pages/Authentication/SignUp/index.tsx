@@ -1,11 +1,11 @@
 import { AuthBase, Content } from ".."
 import { Form } from "../../../_components/Form";
 import { Input } from "../../../_components/Input";
-import { LoginDivSty, LoginSty } from "../style"
 import { MdOutlineAlternateEmail as EmailIcon } from "react-icons/md";
 import {FaUser as UserIcon } from "react-icons/fa";
-import { BiWorld, BiMap } from 'react-icons/bi';
+import { BiWorld, BiMap, BiCalendar as BirthIcon } from 'react-icons/bi';
 import { SignUpDivSty, SignUpSty } from "./style";
+
 
 const SignUpContent = ()=>{
     return(
@@ -15,6 +15,15 @@ const SignUpContent = ()=>{
                 <Input.Field>
                     <Input.Icon icon={UserIcon} />
                     <Input.Input id="fullname" placeholder="Full Name"/>
+                </Input.Field>
+            </Input.Root>
+        </Form.Field>
+
+        <Form.Field >
+            <Input.Root>
+                <Input.Field>
+                    <Input.Icon icon={BirthIcon} />
+                    <Input.Input type="date" id="birthdate" placeholder="Date of Birth"/>
                 </Input.Field>
             </Input.Root>
         </Form.Field>
