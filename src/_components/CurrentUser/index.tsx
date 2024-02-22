@@ -5,12 +5,12 @@ import { Link, useNavigate } from "react-router-dom"
 import { StringMiddleWare } from "../../_middlewares/StringMiddleware"
 
 export const CurrentUser = ()=>{
-    const [current, setCurrent] = useState<User | null>(null)
+    const [current, setCurrent] = useState<User | null>(StateController.getCurrentUser())
     const navigate = useNavigate()
     useEffect(()=>{
         setCurrent(StateController.getCurrentUser())
         // setCurrent(StateController.getToTest())
-    },[])
+    },[current])
 
     function handleClick(){
         navigate('/profile')

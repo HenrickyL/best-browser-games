@@ -85,6 +85,10 @@ export interface Game {
       return StateController._users[0]
     }
 
+    static logoff(){
+      StateController._currentUser = null
+    }
+
     // Método estático para adicionar um novo jogo
   static addGame(game: Game) {
     StateController.games.push(game);
