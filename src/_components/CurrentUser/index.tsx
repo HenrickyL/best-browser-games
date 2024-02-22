@@ -8,25 +8,27 @@ export const CurrentUser = ()=>{
     const [current, setCurrent] = useState<User | null>(null)
     const navigate = useNavigate()
     useEffect(()=>{
-        // setCurrent(StateController.getCurrentUser())
-        setCurrent(StateController.getToTest())
+        setCurrent(StateController.getCurrentUser())
+        // setCurrent(StateController.getToTest())
     },[])
 
     function handleClick(){
         navigate('/profile')
     }
     return (
-        <CurrentUserSty onClick={handleClick}>
-            {current ? 
-             <>
+        <>
+        {current ?
+            <CurrentUserSty onClick={handleClick}>
                 <span>{StringMiddleWare.NameUpperFirst(current.username)}</span>
-                <UserImageSty>
-                    <img src={current.imageUrl} alt={`${current.username} profile image`} />
-                </UserImageSty>
-             </>
-             :
-             <Link to={'/auth/login'}>Sign-in</Link>
-            }
-        </CurrentUserSty>
+                    <UserImageSty>
+                        <img src={current.imageUrl} alt={`${current.username} profile image`} />
+                    </UserImageSty>
+            </CurrentUserSty> :
+            <CurrentUserSty >
+                <Link to={'/auth/login'}>Sign-in</Link>
+            </CurrentUserSty>
+    
+        }
+        </>
     )
 }

@@ -19,11 +19,19 @@ export interface Game {
   }
   
   export interface User {
-    id: string;
+    id?: string;
     username: string;
     password: string;
     email: string;
     imageUrl?: string;
+    data?: UserData
+  }
+
+  export interface UserData{
+    birthdate: Date,
+    country: string
+    state: string,
+    fullName: string
   }
   
   export interface UserLogin {
@@ -50,6 +58,7 @@ export interface Game {
     // Método estático para adicionar um novo usuário
     static addUser(user: User) {
       const userToAdd:User = {...user,
+        id: uuid(),
         email: user.email.toLowerCase(),
         username: user.username.toLowerCase()
         }

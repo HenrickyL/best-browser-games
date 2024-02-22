@@ -6,6 +6,8 @@ import {FaUser as UserIcon } from "react-icons/fa";
 import { BiWorld, BiMap, BiCalendar as BirthIcon } from 'react-icons/bi';
 import { SignUpDivSty, SignUpSty } from "./style";
 import { useState } from "react";
+import { StateController, User } from "../../../_middlewares/StateController";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -13,7 +15,7 @@ interface SignUpContentProps{
     setEmail: React.Dispatch<React.SetStateAction<string>>;
     setPassword: React.Dispatch<React.SetStateAction<string>>;
     setFullName: React.Dispatch<React.SetStateAction<string>>;
-    setBirthdate: React.Dispatch<React.SetStateAction<Date | null>>;
+    setBirthdate: React.Dispatch<React.SetStateAction<Date>>;
     setCountry: React.Dispatch<React.SetStateAction<string>>;
     setState: React.Dispatch<React.SetStateAction<string>>;
 }
@@ -103,12 +105,25 @@ export const SignUp = ()=>{
     const [country, setCountry] = useState<string>('');
     const [state, setState] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [birthdate, setBirthdate] = useState<Date | null>(null);
+    const [birthdate, setBirthdate] = useState<Date>(new Date());
     const [error, setError] = useState<boolean>(false);
-
+    const navigator = useNavigate()
 
     function HandleSignUp(event: React.FormEvent<HTMLFormElement>){
         event.preventDefault()
+        StateController.addUser({
+            email,
+            username: fullName,
+            password,
+            imageUrl: 'https://picsum.photos/300/300',
+            data:{
+                birthdate,
+                country,
+                state,
+                fullName
+            }
+        })
+        navigator('/auth/login')
     }
     return(
         <SignUpSty>
@@ -116,12 +131,12 @@ export const SignUp = ()=>{
                 <AuthBase 
                     content={signUpContent} 
                     Component={<SignUpContent 
-                    setBirthdate={setBirthdate}
-                    setCountry={setCountry}
-                    setEmail={setEmail}
-                    setFullName={setFullName}
-                    setPassword={setPassword}
-                    setState={setState}/>}
+                        setBirthdate={setBirthdate}
+                        setCountry={setCountry}
+                        setEmail={setEmail}
+                        setFullName={setFullName}
+                        setPassword={setPassword}
+                        setState={setState}/>}
                     handleSubmit={HandleSignUp}
                     />
             </SignUpDivSty>
