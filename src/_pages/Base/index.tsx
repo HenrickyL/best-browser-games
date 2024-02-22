@@ -4,6 +4,7 @@ import { services } from "../../_middlewares/SideBarServices"
 import { BaseDivSty, BaseSty } from "./style"
 import { Header } from "../../_components/Header"
 import { ThemeToggle } from "../../_components/ThemeToggle/index."
+import { CurrentUser } from "../../_components/CurrentUser"
 
 
 export const Base = ()=>{
@@ -25,8 +26,11 @@ export const Base = ()=>{
             <BaseDivSty>
                 <Header.Root>
                     <Header.Field />
-                    <h1>Logo</h1>
+                    <Header.Logo>
+                        <h1>Logo</h1>
+                    </Header.Logo>
                     <Header.Field >
+                        <CurrentUser /> 
                         <ThemeToggle />
                     </Header.Field>
                 </Header.Root>

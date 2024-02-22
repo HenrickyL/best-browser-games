@@ -3,12 +3,12 @@ import { FormLabelSty } from "./style"
 
 interface FormLabelProps extends React.LabelHTMLAttributes<HTMLLabelElement>{
     text: string
-    for: string
+    htmlFor: string
 }
 
-export const FormLabel = (props: FormLabelProps)=>{
+export const FormLabel = ({htmlFor, ...props}: FormLabelProps)=>{
     return (
-        <FormLabelSty htmlFor={props.for}>
+        <FormLabelSty htmlFor={htmlFor} {...props}>
             {props.text}
         </FormLabelSty>
     )

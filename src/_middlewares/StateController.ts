@@ -2,7 +2,7 @@ import { v4 as uuid } from 'uuid';
 
 
 // Interfaces para representar os tipos de dados
-interface Game {
+export interface Game {
     id: string;
     title: string;
     category: string;
@@ -11,14 +11,14 @@ interface Game {
     imageUrl?: string;
   }
   
-  interface Review {
+  export interface Review {
     gameId: string;
     userId: string;
     rating: number;
     comment: string;
   }
   
-  interface User {
+  export interface User {
     id: string;
     username: string;
     password: string;
@@ -26,18 +26,20 @@ interface Game {
     imageUrl?: string;
   }
   
-  interface UserLogin {
+  export interface UserLogin {
     email: string;
     password: string;
   }
   
   // Classe StateController para gerenciar o estado
   export abstract class StateController {
-    private static users: User[] = [
+    private static _currentUser: User | null = null
+    private static _users: User[] = [
         {id: uuid(),
         email: 'admin@gmail.com',
         password: 'admin123',
-        username: 'admin'
+        username: 'admin',
+        imageUrl: 'https://cdn-icons-png.flaticon.com/512/2991/2991252.png'
         }
     ];
 
@@ -51,38 +53,47 @@ interface Game {
         email: user.email.toLowerCase(),
         username: user.username.toLowerCase()
         }
-      this.users.push(userToAdd);
+      StateController._users.push(userToAdd);
     }
   
     // Método estático para verificar se um usuário existe
     static userExists(email: string): boolean {
-      return this.users.some(user => user.email.toLowerCase() === email);
+      return StateController._users.some(user => user.email.toLowerCase() === email);
     }
   
     // Método estático para fazer login
     static login({ email, password }: UserLogin): User | null {
-      const user = this.users.find(user => user.email.toLowerCase() === email && user.password === password);
-      return user ? user : null;
+      const user = StateController._users.find(user => user.email.toLowerCase() === email && user.password === password);
+      StateController._currentUser = user ? user : null
+      return StateController._currentUser;
+    }
+
+    static getCurrentUser():User | null{
+      return StateController._currentUser;
+    }
+
+    static getToTest(): User{
+      return StateController._users[0]
     }
 
     // Método estático para adicionar um novo jogo
   static addGame(game: Game) {
-    this.games.push(game);
+    StateController.games.push(game);
   }
 
   // Método estático para obter todos os jogos
   static getGames(): Game[] {
-    return this.games;
+    return StateController.games;
   }
 
   // Método estático para adicionar uma nova avaliação
   static addReview(review: Review) {
-    this.reviews.push(review);
+    StateController.reviews.push(review);
   }
 
   // Método estático para obter todas as avaliações
   static getReviews(): Review[] {
-    return this.reviews;
+    return StateController.reviews;
   }
   }
   

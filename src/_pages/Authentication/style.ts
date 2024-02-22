@@ -144,6 +144,19 @@ export const LoginSty = styled.div`
             0 0 40px ${prop=>prop.theme.primaryLight};
         }
     }
+
+    span{
+        transition: 0.5s;
+        border: 1px solid red;
+        padding: 8px;
+        border-radius: 8px;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        color: red;
+        filter: blur(0.2);
+        text-shadow: 0 0 5px red, 0 0 10px red;
+    }
    
 `
 

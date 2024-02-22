@@ -119,7 +119,7 @@ export const darkTheme: Theme = {
 
 export abstract class ThemeController{ 
   private static _currentTheme: Theme = darkTheme
-  private static _isLight : boolean = true
+  private static _isLight : boolean = false
   private static _dispatch: React.Dispatch<React.SetStateAction<Theme>> | null = null
   public static getTheme(): Theme {
     return ThemeController._currentTheme

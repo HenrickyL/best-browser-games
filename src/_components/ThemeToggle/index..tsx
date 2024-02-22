@@ -10,7 +10,7 @@ import {
 
 
 export const ThemeToggle = ()=>{
-    const [theme, setTheme] = useState<Theme>(darkTheme)
+    const [theme, setTheme] = useState<Theme>(ThemeController.getTheme())
 
     const handleClick = ()=>{
         ThemeController.toggle()
