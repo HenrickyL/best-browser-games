@@ -7,11 +7,11 @@ interface InputButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
 }
 
 
-export const InputButton = (props: InputButtonProps)=>{
+export const InputButton = ({icon: Icon, text, ...props}: InputButtonProps)=>{
     return (
-        <InputButtonSty >
-            {props.icon && <props.icon />}
-            {props.text}
+        <InputButtonSty {...props} >
+            {Icon && <Icon />}
+            {text}
         </InputButtonSty>
     )
 }

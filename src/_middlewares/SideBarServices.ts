@@ -40,10 +40,10 @@ export const services = {
             icon:  HelpIcon,
             to: '/help'
         },
-        {
-            text: 'Exit',
-            icon:  ExitIcon,
-            to: '/exit'
-        },
+        // {
+        //     text: 'Exit',
+        //     icon:  ExitIcon,
+        //     to: '/exit'
+        // },
     ]
 }

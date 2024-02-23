@@ -5,9 +5,9 @@ interface FormRootProps extends React.FormHTMLAttributes<HTMLFormElement>{
     children: ReactNode
 }
 
-export const FormRoot = ({children}: FormRootProps)=>{
+export const FormRoot = ({children, ...props}: FormRootProps)=>{
     return(
-        <FormRootSty>
+        <FormRootSty {...props}>
             {children}
         </FormRootSty>
     )

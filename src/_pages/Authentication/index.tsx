@@ -2,8 +2,6 @@ import { SpanSty } from "./style"
 import { Form } from "../../_components/Form"
 import { Input } from "../../_components/Input"
 import { Icon } from "../../_components/Icon";
-
-
 import { 
     FaHeart as HeartIcon } from "react-icons/fa";
 import { IconType } from "react-icons";
@@ -15,27 +13,28 @@ import { Link } from "react-router-dom";
 export interface Content{
     title: string,
     icon: IconType,
-    component: ReactNode,
     toText: string,
     to: string,
     buttonTitle: string
 
 }
 
-interface BaseProp{
+interface AuthBaseProp{
     content: Content
+    handleSubmit: (event: React.FormEvent<HTMLFormElement>)=>void
+    Component: ReactNode
 }
 
-export const AuthBase = ({content}:BaseProp )=>{
+export const AuthBase = ({content, handleSubmit, Component}:AuthBaseProp )=>{
     return(
         <>
-        <Form.Root  action="post">
+        <Form.Root action="post" onSubmit={handleSubmit}>
             <Form.Title >
                 <Icon icon={content.icon}/>
                 <h2>{content.title}</h2>
                 <Icon icon={HeartIcon}/>
             </Form.Title>
-            {content.component}
+            {Component}
             <Input.Button type="submit" text={content.buttonTitle}/>
             <SpanSty>
                 <Link to={content.to}>
