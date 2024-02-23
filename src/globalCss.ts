@@ -74,6 +74,38 @@ const GlobalStyle = createGlobalStyle`
     inherits: false;
     initial-value: 0deg;
   }
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  max-width: 8px;
+  max-height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: ${prop=>prop.theme.background};
+  border-radius: 8px;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: ${prop=>prop.theme.primary};
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5),
+    inset 0 0 12px rgba(0,0,0,0.5);
+  transition: 0.5s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: ${prop=>prop.theme.primaryLight};
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.5),
+    inset 0 0 12px rgba(0,0,0,0.7);
+}
 `;
 
 export default GlobalStyle;
